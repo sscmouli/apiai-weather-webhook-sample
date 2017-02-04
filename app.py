@@ -23,8 +23,12 @@ def webhook():
     print(json.dumps(req, indent=4))
 
     #res = processRequest(req)
+    result = req.get("result")
+    parameters = result.get("parameters")
+    city = parameters.get("geo-city")
+
     res = {
-        "speech": "I am Aks, Aks I am",
+        "speech": "I am Aks, Aks I am. I own : " + city,
         "displayText": "I am Aks, Aks I am",
         "source": "random"
     }
