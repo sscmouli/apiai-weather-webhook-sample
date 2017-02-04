@@ -22,7 +22,12 @@ def webhook():
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    res = processRequest(req)
+    #res = processRequest(req)
+    res = {
+        "speech": "I am Aks, Aks I am",
+        "displayText": "I am Aks, Aks I am",
+        "source": "random"
+    }
 
     res = json.dumps(res, indent=4)
     # print(res)
