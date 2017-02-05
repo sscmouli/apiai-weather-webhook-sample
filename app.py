@@ -36,6 +36,8 @@ def webhook():
         not_possible_times.append(poss_time[:-3])
 
     print(not_possible_times)
+    print(movie)
+    print(zip_code)
 
 
     print("aks1")
