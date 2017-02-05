@@ -30,7 +30,7 @@ def webhook():
 
     print("aks1")
 
-    baseurl = "http://data.tmsapi.com/v1.1/movies/showings?startDate=2017-02-05&numDays=6&zip=94086&api_key=3dkbquh9qjwzd752hj8n2n79"
+    baseurl = "http://data.tmsapi.com/v1.1/movies/showings?startDate=2017-02-05&numDays=1&zip=94086&api_key=3dkbquh9qjwzd752hj8n2n79"
     result = urllib.request.urlopen(baseurl).read()
     data = json.loads(result)
 
