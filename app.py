@@ -35,7 +35,7 @@ def webhook():
     data = json.loads(result)
 
     print("aks2")
-    print(data[0])
+    #print(data[0])
     #print(data)
 
     theaters = ["AMC Mercado 20", "Century Cinema 16"]
@@ -46,9 +46,11 @@ def webhook():
 
     for movie_item in data:
         if movie in movie_item.title:
+            print(movie_item.title)
             showtimes_theater = movie_item.showtimes
             for stt in showtimes_theater:
                 if stt.theater.name in theaters:
+                    print(stt.theater.name)
                     showtime[stt.theater.name].append(stt.dateTime)
 
     print("aks3")
