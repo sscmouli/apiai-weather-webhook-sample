@@ -45,6 +45,7 @@ def webhook():
     }
 
     print("aks2.5")
+    print(data[0].title)
     for movie_item in data:
         print(movie_item.title)
         #if movie in movie_item.title:
@@ -57,6 +58,7 @@ def webhook():
     print("aks3")
     print(showtimes)
 
+    showtimes = json.dumps(showtimes)
     res = {
         "speech": showtimes,
         "displayText": showtimes,
