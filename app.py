@@ -33,7 +33,7 @@ def webhook():
     for poss_time in given_time:
         not_possible_times.append(poss_time[:-3])
 
-    print not_possible_times
+    print(not_possible_times)
 
 
     print("aks1")
