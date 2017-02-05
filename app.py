@@ -53,8 +53,7 @@ def webhook():
             for stt in showtimes_theater:
                 if stt['theater']['name'] in theaters:
                     print(stt['theater']['name'])
-                    showtimes[stt['theater']['name'].append(stt['dateTime'])
-    
+                    showtimes[stt['theater']['name']].append(stt['dateTime'])
     print("aks3")
     print(showtimes)
 
