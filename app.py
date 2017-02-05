@@ -45,13 +45,13 @@ def webhook():
     }
 
     for movie_item in data:
+        print(movie_item.title)
         if movie in movie_item.title:
-            print(movie_item.title)
             showtimes_theater = movie_item.showtimes
             for stt in showtimes_theater:
                 if stt.theater.name in theaters:
                     print(stt.theater.name)
-                    showtime[stt.theater.name].append(stt.dateTime)
+                    showtimes[stt.theater.name].append(stt.dateTime)
 
     print("aks3")
     print(showtimes)
