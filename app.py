@@ -56,14 +56,20 @@ def webhook():
             for stt in showtimes_theater:
                 if stt['theatre']['name'] in theaters:
                     print(stt['theatre']['name'])
-                    showtimes[stt['theatre']['name']].append(stt['dateTime'])
+                    showtimes[stt['theatre']['name']].append(stt['dateTime'][11:])
     print("aks3")
     print(showtimes)
 
-    showtimes = json.dumps(showtimes)
+    speech = ""
+
+    for showtime in showtimes:
+        speech = speech + "showtimes in " + showtime + " : " + showtimes[showtime] + "."
+
+    #showtimes = json.dumps(showtimes)
+    
     res = {
-        "speech": showtimes,
-        "displayText": showtimes,
+        "speech": speech,
+        "displayText": speech,
         "source": "data.tmsapi.com"
     }
 
