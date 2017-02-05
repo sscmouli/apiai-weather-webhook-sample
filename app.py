@@ -45,10 +45,10 @@ def webhook():
     }
 
     print("aks2.5")
-    print(data[0]['title'])
+    #print(data[0]['title'])
     for movie_item in data:
         print(movie_item['title'])
-        if movie in movie_item['title']:
+        if movie_item['title'].find(movie):
             showtimes_theater = movie_item['showtimes']
             for stt in showtimes_theater:
                 if stt['theater']['name'] in theaters:
