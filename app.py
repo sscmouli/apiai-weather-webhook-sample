@@ -25,12 +25,35 @@ def webhook():
     #res = processRequest(req)
     result = req.get("result")
     parameters = result.get("parameters")
-    city = parameters.get("geo-city")
+    zip_code = parameters.get("zip-code")
+    movie = parameters.get("movie")
+
+    print("aks1")
+
+    baseurl = "http://data.tmsapi.com/v1.1/movies/showings?startDate=2017-02-05&numDays=6&zip=94086&api_key=3dkbquh9qjwzd752hj8n2n79"
+    result = urllib.request.urlopen(baseurl).read()
+    data = json.loads(result)
+
+    print("aks2")
+    theaters = ["AMC Mercado 20", "Century Cinema 16"]
+    showtimes = {
+    "AMC Mercado 20" : [],
+    "Century Cinema 16" : []
+    }
+
+    for movie_item in data:
+        if movie in movie_item.title:
+            showtimes_theater = movie_item.showtimes
+            for stt in showtimes_theater:
+                if stt.theater.name in theaters:
+                    showtime[stt.theater.name].append(stt.dateTime)
+
+    print("aks3")
 
     res = {
-        "speech": "I am Aks, Aks I am. I own : " + city,
-        "displayText": "I am Aks, Aks I am",
-        "source": "random"
+        "speech": showtimes,
+        "displayText": showtimes,
+        "source": "data.tmsapi.com"
     }
 
     res = json.dumps(res, indent=4)
