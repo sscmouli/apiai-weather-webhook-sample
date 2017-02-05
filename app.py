@@ -29,6 +29,8 @@ def webhook():
     movie = parameters.get("movie")
 
     given_time = parameters.get("time")
+    if given_time is None:
+        given_time = []
     not_possible_times = []
     for poss_time in given_time:
         not_possible_times.append(poss_time[:-3])
