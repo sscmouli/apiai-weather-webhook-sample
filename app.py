@@ -44,14 +44,15 @@ def webhook():
     "Century Cinema 16" : []
     }
 
+    print("aks2.5")
     for movie_item in data:
         print(movie_item.title)
-        if movie in movie_item.title:
-            showtimes_theater = movie_item.showtimes
-            for stt in showtimes_theater:
-                if stt.theater.name in theaters:
-                    print(stt.theater.name)
-                    showtimes[stt.theater.name].append(stt.dateTime)
+        #if movie in movie_item.title:
+         #   showtimes_theater = movie_item.showtimes
+          #  for stt in showtimes_theater:
+           #     if stt.theater.name in theaters:
+            #        print(stt.theater.name)
+             #       showtimes[stt.theater.name].append(stt.dateTime)
 
     print("aks3")
     print(showtimes)
