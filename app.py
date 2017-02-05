@@ -47,7 +47,9 @@ def webhook():
     print("aks2.5")
     #print(data[0]['title'])
     for movie_item in data:
-        print(movie_item['title'] + "  : " + movie + " : " + movie in movie_item['title'])
+        print(movie_item['title'])
+        print(movie)
+        print(movie in movie_item['title'])
         if movie in movie_item['title']:
             showtimes_theater = movie_item['showtimes']
             for stt in showtimes_theater:
