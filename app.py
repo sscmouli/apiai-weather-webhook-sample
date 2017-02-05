@@ -35,6 +35,8 @@ def webhook():
     data = json.loads(result)
 
     print("aks2")
+    print(data)
+    
     theaters = ["AMC Mercado 20", "Century Cinema 16"]
     showtimes = {
     "AMC Mercado 20" : [],
