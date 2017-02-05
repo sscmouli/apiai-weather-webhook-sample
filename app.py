@@ -28,6 +28,14 @@ def webhook():
     zip_code = parameters.get("zip-code")
     movie = parameters.get("movie")
 
+    given_time = parameters.get("time")
+    not_possible_times = []
+    for poss_time in given_time:
+        not_possible_times.append(poss_time[:-3])
+
+    print not_possible_times
+
+
     print("aks1")
 
     baseurl = "http://data.tmsapi.com/v1.1/movies/showings?startDate=2017-02-05&numDays=1&zip="+zip_code+"&api_key=3dkbquh9qjwzd752hj8n2n79"
@@ -54,7 +62,9 @@ def webhook():
                 if stt['theatre']['name'] not in showtimes:
                     showtimes[stt['theatre']['name']] = []
                 print(stt['theatre']['name'])
-                showtimes[stt['theatre']['name']].append(stt['dateTime'][11:])
+                time_show = stt['dateTime'][11:]
+                if time_show not in not_possible_times:
+                    showtimes[stt['theatre']['name']].append(time_show)
     print("aks3")
     print(showtimes)
 
