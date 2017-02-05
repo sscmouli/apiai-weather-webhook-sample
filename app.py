@@ -52,6 +52,7 @@ def webhook():
         print(movie in movie_item['title'])
         if movie in movie_item['title']:
             showtimes_theater = movie_item['showtimes']
+            print(movie_item['showtimes'][0])
             for stt in showtimes_theater:
                 if stt['theater']['name'] in theaters:
                     print(stt['theater']['name'])
