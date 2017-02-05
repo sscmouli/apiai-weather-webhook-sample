@@ -25,7 +25,7 @@ def webhook():
     #res = processRequest(req)
     result = req.get("result")
     parameters = result.get("parameters")
-    zip_code = parameters.get("zip-code")
+    #zip_code = parameters.get("zip-code")
     movie = parameters.get("movie")
 
     print("aks1")
