@@ -63,7 +63,7 @@ def webhook():
     speech = ""
 
     for showtime in showtimes:
-        speech = speech + "showtimes in " + showtime + " : ".join(showtimes[showtime]) + "."
+        speech = speech + "Showtimes in " + showtime + " " + " ".join(showtimes[showtime]) + "\n"
 
         print(speech)
     #showtimes = json.dumps(showtimes)
