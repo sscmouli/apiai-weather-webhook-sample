@@ -28,10 +28,16 @@ def webhook():
     zip_code = parameters.get("zip-code")
     movie = parameters.get("movie")
 
-    given_time = parameters.get("time")
+    given_time = parameters.get("times")
+
     if given_time is None:
-        given_time = []
+        given_time = ""
     not_possible_times = []
+
+    given_time = given_time.split(",")[1:]
+
+    print given_time
+
     for poss_time in given_time:
         not_possible_times.append(poss_time[:-3])
 
