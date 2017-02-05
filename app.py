@@ -38,11 +38,8 @@ def webhook():
     #print(data[0])
     #print(data)
 
-    theaters = ["AMC Mercado 20", "Century Cinema 16"]
-    showtimes = {
-    "AMC Mercado 20" : [],
-    "Century Cinema 16" : []
-    }
+    #theaters = ["AMC Mercado 20", "Century Cinema 16"]
+    showtimes = {}
 
     print("aks2.5")
     #print(data[0]['title'])
@@ -54,9 +51,10 @@ def webhook():
             showtimes_theater = movie_item['showtimes']
             print(movie_item['showtimes'][0])
             for stt in showtimes_theater:
-                if stt['theatre']['name'] in theaters:
-                    print(stt['theatre']['name'])
-                    showtimes[stt['theatre']['name']].append(stt['dateTime'][11:])
+                if stt['theatre']['name'] not in showtimes:
+                    showtimes[stt['theatre']['name']] = []
+                print(stt['theatre']['name'])
+                showtimes[stt['theatre']['name']].append(stt['dateTime'][11:])
     print("aks3")
     print(showtimes)
 
